@@ -38,8 +38,7 @@ CREATE TABLE time (
                       id INT AUTO_INCREMENT,
                       user_id INT,
                       task_id INT,
-                      time_start TIME,
-                      time_stop TIME,
+                      hours LONG
                       PRIMARY KEY (id),
                       FOREIGN KEY (user_id) REFERENCES users(user_id),
                       FOREIGN KEY (task_id) REFERENCES tasks(task_id)
@@ -53,9 +52,10 @@ INSERT INTO projects(projectName, projectDescription) VALUES ('patpol', 'duzy kl
 INSERT INTO tasks(taskName, taskDescription, project_id) VALUES ('call', 'rozmowa z klientem',1);
 INSERT INTO tasks(taskName, taskDescription, project_id) VALUES ('meet', 'spotkanie z klientem',1);
 
-INSERT INTO time(start, stop, tasks_id) VALUES ('15:00:00.','17:00:00.', 1);
-INSERT INTO time(start, stop, tasks_id) VALUES ('19:00:00','21:00:00', 3);
+INSERT INTO time(hours, tasks_id) VALUES (2.5, 1);
+INSERT INTO time(hours, tasks_id) VALUES (3, 2);
 
+INSERT INTO projects(projectName, projectDescription) VALUES ('marpol', 'sredni klient');
 
 
 
